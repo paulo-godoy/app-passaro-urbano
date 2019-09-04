@@ -1,7 +1,12 @@
+import { Http } from '@angular/http';
+import { Injectable } from '@angular/core';
 import { Oferta } from './shared/oferta.model';
-import { resolve } from 'q';
 
+@Injectable()
 export class OfertasService {
+
+    constructor(private http: Http) {}
+    
 
     public ofertas: Oferta[] = [
            {
