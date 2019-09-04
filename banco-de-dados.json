@@ -37,7 +37,7 @@
 			"descricao_oferta": "Pizza Grande, Mussarela, Marguerita ou outras!",
 			"anunciante": "Nossa Pizza",
 			"valor": 21.90,
-			"destaque": false,
+			"destaque": true,
 			"imagens": [
 				{"url": "/assets/ofertas/3/img1.jpg"},
 				{"url": "/assets/ofertas/3/img2.jpg"},
