@@ -13,23 +13,31 @@ export class OfertasService {
 
     public getOfertas(): Promise<Oferta[]> {
         //Efetuar uma requisição http
-        return this.http.get(`${URL_API}?destaque=true`)
+        return this.http.get(`${URL_API}/ofertas?destaque=true`)
             .toPromise()
             .then((resposta: any) => resposta.json())
         //retornar uma promise Ofertas[]
     }
 
     public getOfertasPorCategoria(categoria: string) : Promise<Oferta[]> {
-      return this.http.get(`${URL_API}?categoria=${categoria}`)
+      return this.http.get(`${URL_API}/ofertas?categoria=${categoria}`)
         .toPromise()
         .then((resposta: any) => resposta.json())
     }
 
     public getOfertaPorId(id: number): Promise<Oferta> {
-      return this.http.get(`${URL_API}?id=${id}`)
+      return this.http.get(`${URL_API}/ofertas?id=${id}`)
       .toPromise()
       .then((resposta: any) => {
         return resposta.json()[0]
       })
+    }
+
+    public getComoUsarOfertaPorId(id: number): Promise<string> {
+      return this.http.get(`${URL_API}/como-usar?id=${id}`)
+        .toPromise()
+        .then((resposta: any) => {
+          return resposta.json()[0].descricao
+        })
     }
 }
