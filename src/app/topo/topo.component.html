@@ -1,10 +1,20 @@
 <div class="fixed-top">
   <nav class="navbar navbar-light bg-faded fundo-branco">
     <div class="container">
-      <a [routerLink]="['']" class="navbar-brand">
-        <img src="../../assets/logo.png" />
-      </a>
-      <a a href="#"><img src="../../assets/carrinho.png" /></a>
+      <div class="row">
+        <div class="col-md-4">
+            <a [routerLink]="['']" class="navbar-brand">
+            <img src="../../assets/logo.png" />
+            </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+          <input class="form-control  mt-3" type="text" placeholder="Pesquisar"  aria-label="Pesquisar" #termoDaPesquisa (keyup)="pesquisa(termoDaPesquisa.value)">
+          <!-- <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Pesquisar</button> -->
+      </div>
+      <div class="col-md-2 mt-3">
+          <a  href="#"><img src="../../assets/carrinho.png" /></a>
+      </div>
     </div>
   </nav>
 
