@@ -2,6 +2,8 @@ import { Oferta } from './../shared/oferta.model';
 import { OfertasService } from './../ofertas.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
 
 
 
@@ -26,6 +28,12 @@ export class OfertaComponent implements OnInit {
       this.oferta = oferta
     })
 
+
+    let tempo = Observable.interval(200)
+
+    tempo.subscribe((intervalo: number) => {
+      console.log(intervalo)
+    })
   }
 
 }
