@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
+import { Observer } from 'rxjs/Rx';
 
 
 
@@ -29,11 +30,21 @@ export class OfertaComponent implements OnInit {
     })
 
 
-    let tempo = Observable.interval(200)
+    // let tempo = Observable.interval(200)
 
-    tempo.subscribe((intervalo: number) => {
-      console.log(intervalo)
+    // tempo.subscribe((intervalo: number) => {
+    //   console.log(intervalo)
+    // })
+
+    //observable (observavel)
+    let meuObservableTeste = Observable.create((observer: Observer<string>) => {
+      observer.next('Primeiro evento da stream')
     })
+
+    //observable (observador)
+    meuObservableTeste.subscribe(
+      (resultado: any) => console.log(resultado)
+    )
   }
 
 }
